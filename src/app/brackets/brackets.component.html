@@ -1,0 +1,45 @@
+<div class="bracket my-auto" *ngIf="times">
+  <!-- <div class="round" >
+    <div class="game" *ngFor="let grade of times;let i = index" [id]="i">
+      <div [id]="grade[0].nome" (click)="winner(grade[0].nome,i)" class="team" *ngIf="grade[0]" [ngStyle]="{'border-color': grade[0].cor}">
+        <span class="name pl-2">{{ grade[0].nome  }}</span>
+      </div>
+      <div class="description"></div>
+      <div [id]="grade[1].nome" (click)="winner(grade[1].nome,i)" class="team" *ngIf="grade[1]" [ngStyle]="{'border-color': grade[1].cor}">
+        <span class="name pl-2">{{ grade[1].nome }}</span>
+      </div>
+    </div>
+  </div> -->
+  <ng-container *ngIf="times.length > 1">
+    <div class="round" *ngFor="let grupo of rounds;let j = index">
+      <div class="game" *ngFor="let times of grupo;let i = index" id="{{ j+'G'+i }}">
+        <div
+          class="team"
+          *ngIf="times[0];else default"
+          [id]="j+'T'+times[0].id"
+          (click)="winner(times[0], i, j)"
+          [ngStyle]="{ 'border-color': times[0].cor }"
+        >
+          <span class="name pl-2">{{ times[0].nome }}</span>
+        </div>
+        <div class="description"></div>
+        <div
+          class="team"
+          *ngIf="times[1];else default"
+          [id]="j+'T'+times[1].id"
+          (click)="winner(times[1], i, j)"
+          [ngStyle]="{ 'border-color': times[1].cor }"
+        >
+          <span class="name pl-2">{{ times[1].nome }}</span>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #default>
+  <div class="team">
+    <span class="name p-2"></span>
+  </div>
+  <div class="description"></div>
+</ng-template>

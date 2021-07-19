@@ -1,0 +1,54 @@
+.bg-gray{
+  background-color:rgb(190, 190, 190);
+}
+.example-container {
+  height: 100vh;
+  width: 100vw;
+  border: 3px solid rgb(129, 150, 243);
+
+}
+
+.example-sidenav-content {
+  padding: 30px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  overflow-x: hidden;
+  width: 360px;
+  padding: 20px 0px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.icon{
+  padding-left: 10px;
+  font-size: 60px;
+}
+.seta{
+  cursor: pointer;
+  top: 40vh;
+  position: absolute;
+}
+.quadro-times{
+  margin: 0 auto;
+  width: 260px;
+  border: 2pt dashed rebeccapurple;
+  position: relative;
+}
+.color-red{
+  color: red;
+}
+.time{
+  padding: 2%;
+  vertical-align: baseline;
+  border: 3pt solid gray;
+}
+.nomeTime{
+  word-wrap: break-word;
+  text-transform: uppercase;
+}

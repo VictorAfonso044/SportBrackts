@@ -1,0 +1,98 @@
+body {
+  background-color: lightgrey;
+}
+
+.bracket {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 1em 0;
+  padding: 0 1em;
+  display: flex;
+  white-space: nowrap;
+  position: relative;
+
+  .previous, .next {
+    position: absolute;
+    top: 0;
+    width: 2em;
+    height: 100%;
+    background-color: rgba(0,0,0,.1);
+    border: none;
+    color: white;
+    transition: .5s;
+
+    &.active:hover {
+      width: 3em;
+      background-color: rgba(0,0,0,.3);
+    }
+  }
+  .round {
+    box-sizing: border-box;
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1em;
+    justify-content: space-around;
+    overflow: hidden;
+    transition: .5s;
+
+    .game {
+      background-color: #fff;
+      border-radius: .5em;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+      .team {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        padding: .25em;
+        border-left: .50em solid transparent;
+        transition: .25s;
+
+        & > span {transition: .25s;}
+
+        .seed {
+          font-size: xx-small;
+          color: #666;
+          flex: 0 0 2.5em;
+        }
+
+        .name {
+          flex-grow: 1;
+          flex-shrink: 1;
+          overflow: hidden;
+          text-align: left;
+          text-overflow: ellipsis;
+        }
+
+        &.loser .name {
+          color: #666;
+        }
+
+        .score-leg {
+          font-size: small;
+          flex: 0 0 1.5em;
+        }
+
+        .score-aggregate {
+          flex: 0 0 2em;
+          font-weight: bold;
+
+          .pen {
+            font-size: small;
+
+            &::before {content: " (";}
+            &::after {content: ")";}
+          }
+        }
+      }
+    }
+  }
+}
+.winner{
+  background-color: rgba(0, 128, 0, 0.747);
+  color: white;
+  font-weight: 700;
+}
